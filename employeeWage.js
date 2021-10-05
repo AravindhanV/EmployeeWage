@@ -30,4 +30,7 @@
         default:
             employeeHrs = 0;
     }
+
+    let empWage = employeeHrs * WAGE_PER_HOUR;
+    console.log("Employee Wage: " + empWage);   
 }
