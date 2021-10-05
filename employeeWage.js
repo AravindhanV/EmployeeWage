@@ -1,7 +1,13 @@
-const IS_ABSENT = 0;
-let empCheck = Math.floor(Math.random() * 10) % 2;
-if (empCheck === IS_ABSENT) {
-    console.log("UC1: Employee Absent");
-} else {
-    console.log("UC1: Employee Present");
+//UC1
+{
+    const IS_ABSENT = 0;
+    let empCheck = Math.floor(Math.random() * 10) % 2;
+    if (empCheck === IS_ABSENT) {
+        console.log("UC1: Employee Absent");
+        return;
+    } else {
+        console.log("UC1: Employee Present");
+    }
 }
+
+
