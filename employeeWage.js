@@ -30,13 +30,16 @@
     }
 
     const NO_OF_WORKING_DAYS = 20;
-    let totalHrs = 0
-    for (let day = 0; day < NO_OF_WORKING_DAYS; day++) {
+    const MAX_HRS_IN_MONTH = 160;
+
+    let totalHrs = 0;
+    let totalDays = 0;
+    while (totalHrs < MAX_HRS_IN_MONTH && totalDays < NO_OF_WORKING_DAYS) {
         let empCheck = Math.floor(Math.random() * 10) % 3;
-        let employeeHrs = getEmployeeHours(empCheck);
-        totalHrs += employeeHrs;
+        totalHrs += getEmployeeHours(empCheck);
+        totalDays++;
     }
 
     let empWage = totalHrs * WAGE_PER_HOUR;
-    console.log("Hours: " + totalHrs + ", Wage: " + empWage);
+    console.log("Days: " + totalDays + ", Hours: " + totalHrs + ", Wage: " + empWage);
 }
