@@ -36,6 +36,7 @@ while(totalEmployeeHours<=MAX_HOURS_IN_MONTH &&
 let employeeWage = calcDailyWage(totalEmployeeHours);
 console.log("Total Days: "+ totalWorkingDays+" Total Hours: "+ totalEmployeeHours+" Employee Wage: "+ employeeWage);
 
+//UC7A
 let totalWage=0;
 function sum(dailyWage){
     totalWage+=dailyWage;
@@ -50,11 +51,20 @@ function totalWages(totWage,dailyWage){
 
 console.log("UC7A using reduce "+ empDailyWageArr.reduce(totalWages, 0));
 
-let daiyCounter = 0;
+//UC7B
+let dailyCounter = 0;
 function mapDayWithWage(dailyWage){
-    daiyCounter++;
-    return daiyCounter + " = " + dailyWage;
+    dailyCounter++;
+    return dailyCounter + " = " + dailyWage;
 }
 let mapDayWithWageArr = empDailyWageArr.map(mapDayWithWage);
 console.log("UC7B - Daily Wage map");
 console.log(mapDayWithWageArr);
+
+//UC7C
+function fulltimeWage(dailyWage){
+    return dailyWage.includes("160");
+}
+let fullDayWageArr = mapDayWithWageArr.filter(fulltimeWage);
+console.log("UC7C - Daily wge filter when full time wage earned");
+console.log(fullDayWageArr);
