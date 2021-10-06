@@ -43,3 +43,9 @@ function sum(dailyWage){
 empDailyWageArr.forEach(sum);
 console.log("UC7A- Total Days: "+ totalWorkingDays+ " Total hours: "
         + totalEmployeeHours + " Emp Wage: "+ totalWage);
+
+function totalWages(totWage,dailyWage){
+    return totWage + dailyWage;
+}
+
+console.log("UC7A using reduce "+ empDailyWageArr.reduce(totalWages, 0));
