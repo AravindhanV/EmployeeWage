@@ -20,6 +20,7 @@ function getWorkingHours(empCheck) {
 let totalEmployeeHours = 0;
 let totalWorkingDays = 0;
 let empDailyWageArr = new Array();
+let empDailyHrsMap = new Map();
 let empDailyWageMap = new Map();
 
 function calcDailyWage(empHrs) {
@@ -35,6 +36,7 @@ while (
   empHours = getWorkingHours(empCheck);
   totalEmployeeHours += empHours;
   empDailyWageArr.push(calcDailyWage(empHours));
+  empDailyHrsMap.set(totalWorkingDays, empHours);
   empDailyWageMap.set(totalWorkingDays, calcDailyWage(empHours));
 }
 let employeeWage = calcDailyWage(totalEmployeeHours);
@@ -132,3 +134,19 @@ console.log(
   " Emp Wage Map totalHours: " +
     Array.from(empDailyWageMap.values()).reduce(totalWagesMap, 0)
 );
+
+//UC9
+const findTotal = (totalVal, dailyVal) => {
+  return totalVal + dailyVal;
+};
+let totalHours = Array.from(empDailyHrsMap.values())
+  .filter((dailyHrs) => dailyHrs > 0)
+  .reduce(findTotal, 0);
+let totalSalary = empDailyWageArr
+  .filter((dailyWage) => dailyWage > 0)
+  .reduce(findTotal, 0);
+console.log(
+  "Emp with arrow: Total Hrs: " + totalHours + " Total Wages: " + totalSalary
+);
+
+
