@@ -149,4 +149,16 @@ console.log(
   "Emp with arrow: Total Hrs: " + totalHours + " Total Wages: " + totalSalary
 );
 
+let noWorkingDays = new Array();
+let halfWorkingDays = new Array();
+let fullWorkingDays = new Array();
+empDailyHrsMap.forEach((value, key) => {
+  console.log(key + " -> " + value);
+  if (value == 8) fullWorkingDays.push(key);
+  else if (value == 4) halfWorkingDays.push(key);
+  else noWorkingDays.push(key);
+});
 
+console.log("Full Working Days: " + fullWorkingDays);
+console.log("Half Working Days: " + halfWorkingDays);
+console.log("No Working Days: " + noWorkingDays);
